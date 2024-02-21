@@ -1,0 +1,109 @@
+.winningNumberBox {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  gap: 5px;
+
+  .winningNumbers {
+    background-color: #0000001A;
+    color: black;
+    padding: 8px;
+    width: 20px;
+    border-radius: 50%;
+    font-weight: bold;
+  }
+  .winningNumbers:last-child {
+    background-color: #5a318f;
+    color: white;
+  }
+}
+
+.boxContainer {
+
+  display: flex;
+  justify-content: center;
+  gap: 75px;
+  flex-wrap: wrap;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.select {
+  width: 230px;
+  height: 40px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 16px 30px #0000001A;
+  border-radius: 5px;
+  border-color: white;
+}
+
+.box {
+  width: 318px;
+  height: 495px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.1019607843);
+  border-radius: 10px;
+  text-align: center;
+  .boxHeader {
+    img {
+
+      width: 244px;
+      height: 63px;
+      opacity: 1;
+      margin-top: 25px;
+    }
+  }
+
+  .boxSubTitle {
+    color: #5A318F;
+    margin-bottom: 15px;
+  }
+
+  .boxJackpot {
+    border-top: solid 1px #0000001A;
+    border-bottom: solid 1px #0000001A;
+    width: 90%;
+    margin: auto;
+    padding: 20px 0px;
+
+    .boxJackpotTitle {
+      margin: 0px 0px 0px 10px;
+      color: #5A318F;
+    }
+
+    .boxJackpotAmount {
+
+      font-size: 34px;
+      margin: 0px;
+    }
+  }
+
+  .boxDetails {
+    margin: 20px 0px;
+
+    .boxDetailsTitle {
+      color: #5A318F;
+      margin: 0px;
+    }
+
+    .boxDetailsDescription {
+      margin: 0px;
+    }
+  }
+
+  .boxPlayButton {
+    width: 220px;
+    padding: 15px;
+    background: #5A318F 0% 0% no-repeat padding-box;
+    border-radius: 25px;
+    display: block;
+    margin: auto;
+    color: white;
+  }
+}
