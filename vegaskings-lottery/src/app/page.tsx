@@ -16,7 +16,7 @@ export default function Home() {
   const [selectedCountry, setSelectedCountry] = useState<string>("");
   const [selectedState, setSelectedState] = useState<string>("");
   const [stateListData, setStateListData] = useState<CountryState[]>([]);
-
+  const gameIds = ["101","113","801"];
   function convertXMLGamesToJSON(games: string) {
     const xmlConvertor = new XmlConvertor();
     const data = xmlConvertor.getConvertToJSON(games)?.allgames?.StateProv.map((x: StateProv) => new StateProv(x));
@@ -35,6 +35,16 @@ export default function Home() {
       );
     }
     return lotteryWinningNumbers;
+  } 
+  
+  
+  function getGameImage(gameId: string) {
+
+    if (gameIds.indexOf(gameId) > -1) {
+      return <img src={`/images/game-id-${gameId}.png`} alt={`Game ID ${gameId}`} />;
+    }
+  
+    return <img src="/images/random-2.png" alt="Random Image" />;
   }
 
   function formatDate(date: string) {
@@ -43,12 +53,13 @@ export default function Home() {
   };
 
   function formatCurrency(amount: any) {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 2,
-    }).format(amount);
-  };
+    let formattedAmount = typeof amount === "number" ? amount : 0.0;
+    return   new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+      }).format(formattedAmount);
+  }
 
   useEffect(() => {
 
@@ -102,7 +113,9 @@ export default function Home() {
 
           <article key={index} className={customStyles.box}>
             <div className={customStyles.boxHeader}>
-              <img src='/images/game-id-101.png' />
+
+              { getGameImage(gameItem.game_id)}
+              
             </div>
             <h5 className={customStyles.boxSubTitle}>Previous Winning Numbers:</h5>
             <div className={customStyles.winningNumberBox}>
